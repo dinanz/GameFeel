@@ -93,6 +93,7 @@ public class HeroKnight : MonoBehaviour {
         // -- Handle Animations --
         //Wall Slide
         m_isWallSliding = (m_wallSensorR1.State() && m_wallSensorR2.State()) || (m_wallSensorL1.State() && m_wallSensorL2.State());
+        // m_isWallSliding = (m_wallSensorR1.State() || m_wallSensorR2.State()) || (m_wallSensorL1.State() || m_wallSensorL2.State());
         m_animator.SetBool("WallSlide", m_isWallSliding);
 
         //Death
@@ -124,6 +125,8 @@ public class HeroKnight : MonoBehaviour {
 
             // Reset timer
             m_timeSinceAttack = 0.0f;
+
+            
         }
 
         // Block
