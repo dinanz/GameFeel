@@ -15,19 +15,23 @@ public class GameFeelToggle : MonoBehaviour
 
     private bool hitstopEnabled = false;
     private bool screenShakeEnabled = false;
-    private bool sfx = false;
-    private bool flash = false;
-    private bool particleFX = false;
+    private bool sfxEnabled = false;
+    private bool flashEnabled = false;
+    private bool particleFXEnabled = false;
 
     void Start()
     {
-        // Initialize button visuals
         UpdateButtonVisual(hitstopButton, hitstopEnabled);
         UpdateButtonVisual(screenShakeButton, screenShakeEnabled);
+        UpdateButtonVisual(sfxButton, sfxEnabled);
+        UpdateButtonVisual(flashButton, flashEnabled);
+        UpdateButtonVisual(particleFXButton, particleFXEnabled);
 
-        // Add listeners
         hitstopButton.onClick.AddListener(() => ToggleFeature(ref hitstopEnabled, hitstopButton));
         screenShakeButton.onClick.AddListener(() => ToggleFeature(ref screenShakeEnabled, screenShakeButton));
+        sfxButton.onClick.AddListener(() => ToggleFeature(ref sfxEnabled, sfxButton));
+        flashButton.onClick.AddListener(() => ToggleFeature(ref flashEnabled, flashButton));
+        particleFXButton.onClick.AddListener(() => ToggleFeature(ref particleFXEnabled, particleFXButton));
     }
 
     void ToggleFeature(ref bool feature, Button button)
