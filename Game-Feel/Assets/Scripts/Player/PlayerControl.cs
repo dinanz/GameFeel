@@ -13,6 +13,7 @@ public class PlayerControl : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius = 0.1f;
     public LayerMask groundLayer;
+    private bool wasGroundedLastFrame = false;
 
     [Header("Attack Settings")]
     public float attackDuration = 0.5f;
@@ -23,6 +24,8 @@ public class PlayerControl : MonoBehaviour
     [Header("Particles")]
     public ParticleSystem runningParticle;
     public ParticleSystem hurtParticle;
+    public ParticleSystem landingParticle;  
+
 
     [Header("Sound")]
     public AudioClip runningSound;
@@ -86,7 +89,8 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        if(isDead){
+        if (isDead)
+        {
             return;
         }
 
@@ -102,6 +106,10 @@ public class PlayerControl : MonoBehaviour
             {
                 isGrounded = true;
                 animator.SetBool("Grounded", isGrounded);
+                if (!wasGroundedLastFrame && landingParticle != null && gameFeel.IsParticleEnabled())
+                {
+                    landingParticle.Play();
+                }
             }
             if (isGrounded && !groundSensor.State())
             {
@@ -113,6 +121,8 @@ public class PlayerControl : MonoBehaviour
         {
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         }
+
+        wasGroundedLastFrame = isGrounded;
 
         moveInput = Input.GetAxis("Horizontal");
 
@@ -283,10 +293,15 @@ public class PlayerControl : MonoBehaviour
 
             isHurt = true;
         }
-    }
-
+        }
     private IEnumerator PlayerDeath()
     {
+        if (gameFeel.IsScreenShakeEnabled())
+            gameFeel.ShakeCamera();
+
+        if (gameFeel.IsFlashEnabled())
+            gameFeel.FlashScreenRed();
+
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
         foreach (GameObject enemy in enemies)
         {
@@ -298,9 +313,8 @@ public class PlayerControl : MonoBehaviour
         animator.SetBool("noBlood", noBlood);
         animator.SetTrigger("Death");
 
-        // transform.localScale *= 1.5f;
-
-        yield return new WaitForSeconds(2f);
-        Destroy(gameObject);
+        yield return new WaitForSeconds(2f); 
+        Destroy(gameObject);  
     }
+
 }
