@@ -1873,7 +1873,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.06026572, y: 0.12354438}
+  m_Offset: {x: 0.0033026934, y: 0.19949496}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1883,7 +1883,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.3732387, y: 1.0056207}
+  m_Size: {x: 1.6896996, y: 1.1575221}
   m_EdgeRadius: 0
 --- !u!50 &504348063
 Rigidbody2D:
@@ -1934,6 +1934,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   requiredHitCount: 3
+  gameFeel: {fileID: 564547006}
 --- !u!1 &552249178
 GameObject:
   m_ObjectHideFlags: 0
@@ -7414,18 +7415,33 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3175184340372740497, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
   m_PrefabInstance: {fileID: 1836000600}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &742532642
-MonoBehaviour:
+--- !u!50 &742532646
+Rigidbody2D:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742532639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a7d660d7c66a481bb8cf6a2a95c3c3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &801196328
 GameObject:
   m_ObjectHideFlags: 0
@@ -9168,18 +9184,33 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8603238912080766113, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
   m_PrefabInstance: {fileID: 1836000600}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1319875394
-MonoBehaviour:
+--- !u!50 &1319875398
+Rigidbody2D:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319875391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a7d660d7c66a481bb8cf6a2a95c3c3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1346404631
 GameObject:
   m_ObjectHideFlags: 0
@@ -9356,7 +9387,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -349251051, guid: fc1d67a4622f38e4a97f5152c1977ca9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2, y: 2}
@@ -9402,6 +9433,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   requiredHitCount: 3
+  gameFeel: {fileID: 564547006}
 --- !u!61 &1404975047
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9436,7 +9468,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0031217933, y: 0.12800074}
+  m_Offset: {x: 0.0031220913, y: 0.19129293}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9446,7 +9478,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4942409, y: 1.0072141}
+  m_Size: {x: 1.7980428, y: 1.1337986}
   m_EdgeRadius: 0
 --- !u!50 &1404975048
 Rigidbody2D:
@@ -15509,13 +15541,13 @@ PrefabInstance:
       addedObject: {fileID: 2010526918}
     - targetCorrespondingSourceObject: {fileID: 5687335584196100284, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1932219334}
+      addedObject: {fileID: 1932219338}
     - targetCorrespondingSourceObject: {fileID: 3175184340372740497, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 742532642}
+      addedObject: {fileID: 742532646}
     - targetCorrespondingSourceObject: {fileID: 8603238912080766113, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1319875394}
+      addedObject: {fileID: 1319875398}
   m_SourcePrefab: {fileID: 100100000, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
 --- !u!1 &1842926180
 GameObject:
@@ -16073,18 +16105,33 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5687335584196100284, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
   m_PrefabInstance: {fileID: 1836000600}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1932219334
-MonoBehaviour:
+--- !u!50 &1932219338
+Rigidbody2D:
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932219331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a7d660d7c66a481bb8cf6a2a95c3c3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1966275521
 GameObject:
   m_ObjectHideFlags: 0
@@ -16320,9 +16367,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 10
+  jumpForce: 8
   rollForce: 6
-  hurtForce: 5
+  hurtForce: 2
   groundCheck: {fileID: 0}
   groundCheckRadius: 0.1
   groundLayer:

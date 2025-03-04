@@ -125,6 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5825026199044425334}
   - component: {fileID: 1645038865894131017}
+  - component: {fileID: 4454138274162968377}
   m_Layer: 0
   m_Name: Attack2
   m_TagString: Untagged
@@ -181,9 +182,21 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.6917682, y: -0.13598962}
-  m_Size: {x: 2.3835418, y: 0.8935761}
+  m_Offset: {x: 0.7925554, y: -0.16958493}
+  m_Size: {x: 2.5851166, y: 0.96077156}
   m_Direction: 1
+--- !u!114 &4454138274162968377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3175184340372740497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7d660d7c66a481bb8cf6a2a95c3c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5687335584196100284
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,6 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6015066299278678415}
   - component: {fileID: 3947153826151389810}
+  - component: {fileID: 96002287318772156}
   m_Layer: 0
   m_Name: Attack1
   m_TagString: Untagged
@@ -250,9 +264,21 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.13291907, y: 0.041388035}
-  m_Size: {x: 0.76583815, y: 1.0827761}
+  m_Offset: {x: 0.21553445, y: -0.007139325}
+  m_Size: {x: 0.9310689, y: 1.2544882}
   m_Direction: 0
+--- !u!114 &96002287318772156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5687335584196100284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7d660d7c66a481bb8cf6a2a95c3c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6323719953710832613
 GameObject:
   m_ObjectHideFlags: 0
@@ -634,6 +660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4289774398265069193}
   - component: {fileID: 6485396138758984730}
+  - component: {fileID: 1963569901570649178}
   m_Layer: 0
   m_Name: Attack3
   m_TagString: Untagged
@@ -693,6 +720,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.08868837, y: 0.21876466}
   m_Size: {x: 0.9848299, y: 1.4375293}
   m_Direction: 0
+--- !u!114 &1963569901570649178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8603238912080766113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7d660d7c66a481bb8cf6a2a95c3c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8631832243428726876
 GameObject:
   m_ObjectHideFlags: 0

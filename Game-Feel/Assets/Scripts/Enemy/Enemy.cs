@@ -22,6 +22,11 @@ public class Enemy : MonoBehaviour
     [Header("death")]
     public int requiredHitCount = 3;
 
+    [Header("Game Feel")]
+    public GameFeelToggle gameFeel;
+
+    private bool isFlashing = false;
+    private Color originalColor;
     private Rigidbody2D rb;
     private bool isAttacking = false;
     private bool playerInSight = false;
@@ -45,6 +50,9 @@ public class Enemy : MonoBehaviour
         {
             Debug.LogWarning("Platform Collider unassigned");
         }
+        hitCount = 0;
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        originalColor = sr.color; 
     }
 
     void Update()
@@ -56,8 +64,8 @@ public class Enemy : MonoBehaviour
 
         if (!isAttacking && playerInSight)
             StartCoroutine(AttackPlayer());
-        else if (!isAttacking && !playerInSight)
-            Patrol();
+        // else if (!isAttacking && !playerInSight)
+            // Patrol();
     }
 
     void Patrol()
@@ -78,7 +86,10 @@ public class Enemy : MonoBehaviour
     void DetectPlayer()
     {
         Vector2 origin = transform.position;
-        Vector2 direction = new Vector2(facingDirection, 0);
+        // Vector2 direction = new Vector2(facingDirection, 0);
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        int spriteFacing = sr.flipX ? -1 : 1;
+        Vector2 direction = new Vector2(spriteFacing, 0);
         RaycastHit2D hit = Physics2D.Raycast(origin, direction, detectionRange, detectionLayer);
         Debug.DrawRay(origin, direction * detectionRange, Color.red);
         if (hit.collider != null && hit.collider.CompareTag("Player"))
@@ -114,10 +125,36 @@ public class Enemy : MonoBehaviour
     public void TakeHit()
     {
         if (hitCount >= requiredHitCount)
+        {
             return;
+        }
         hitCount++;
+        Debug.Log("hit times "+hitCount);
+        if(gameFeel.IsHitstopEnabled())
+        {
+            StartCoroutine(FlashSprite()); 
+        }
         if (hitCount >= requiredHitCount)
             Die();
+    }
+
+    IEnumerator FlashSprite()
+    {
+        if (isFlashing)
+            yield break; 
+        isFlashing = true;      
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        Color originalColor = sr.color;
+        for (int i = 0; i < 3; i++)
+        {
+            sr.color = Color.red;
+            yield return new WaitForSeconds(0.1f);
+            sr.color = originalColor;
+            yield return new WaitForSeconds(0.1f);
+        }
+        sr.color = originalColor; 
+        isFlashing = false;
+
     }
 
     void Die()

@@ -232,9 +232,12 @@ public class PlayerControl : MonoBehaviour
         // if (isHurt)
         //     return;
         // isHurt = true;
-        rb.linearVelocity = Vector2.zero;
-        Vector2 hurtDirection = (attacker != null) ? (transform.position - attacker.position).normalized : new Vector2(-facingDirection, 1).normalized;
-        rb.AddForce(hurtDirection * hurtForce, ForceMode2D.Impulse);
+        if (gameFeel.IsHitstopEnabled())
+        {
+            rb.linearVelocity = Vector2.zero;
+            Vector2 hurtDirection = (attacker != null) ? (transform.position - attacker.position).normalized : new Vector2(-facingDirection, 1).normalized;
+            rb.AddForce(hurtDirection * hurtForce, ForceMode2D.Impulse);
+        }
         if (gameFeel.IsScreenShakeEnabled())
             gameFeel.ShakeCamera();
         if (gameFeel.IsFlashEnabled())
@@ -253,7 +256,7 @@ public class PlayerControl : MonoBehaviour
 
     private IEnumerator ResetHurt()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         isHurt = false;
     }
 
@@ -295,7 +298,7 @@ public class PlayerControl : MonoBehaviour
         animator.SetBool("noBlood", noBlood);
         animator.SetTrigger("Death");
 
-        transform.localScale *= 1.5f;
+        // transform.localScale *= 1.5f;
 
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
