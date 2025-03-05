@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Enemy : MonoBehaviour
 {
@@ -132,10 +133,22 @@ public class Enemy : MonoBehaviour
         Debug.Log("hit times "+hitCount);
         if(gameFeel.IsHitstopEnabled())
         {
-            StartCoroutine(FlashSprite()); 
+            StartCoroutine(FlashSprite());
+            Time.timeScale = 0.0f;
+            StartCoroutine(HitStop());
         }
-        if (hitCount >= requiredHitCount)
+        if (gameFeel.IsScreenShakeEnabled())
+            gameFeel.ShakeCamera();
+        if (hitCount >= requiredHitCount){
+            Time.timeScale = 1.0f;
             Die();
+
+        }
+    }
+
+    IEnumerator HitStop(){
+        yield return new WaitForSecondsRealtime(0.1f);
+        Time.timeScale = 1.0f;
     }
 
     IEnumerator FlashSprite()
